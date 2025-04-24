@@ -13,8 +13,9 @@ public interface StudentService {
     List<Student>findByName(String name);
     Student findByNameAndEmail(String name, String email);
     Student findByNameOrEmail(String name, String email);
-
     List<Student> findBYDepartmentByDepartmentName(String departmentName);
-
     List<Student> findBySubjectSubjectName(String subjectName);
+    List<Student>findByEmailLike(String email);
+    List<Student> findByNameStartsWith(String name);
+
 }

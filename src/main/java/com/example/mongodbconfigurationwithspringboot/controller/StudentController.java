@@ -64,4 +64,14 @@ public class StudentController {
 
     }
 
+    @GetMapping("by-email")
+    public List<Student> findByEmail(@RequestParam String email){
+        return studentService.findByEmailLike(email);
+    }
+
+    @GetMapping("by-name")
+    public List<Student> findByNameStartsWith(String name) {
+        return studentService.findByNameStartsWith(name);
+    }
+
 }

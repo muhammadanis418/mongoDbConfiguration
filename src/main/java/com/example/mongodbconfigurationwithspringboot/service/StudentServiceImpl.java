@@ -70,4 +70,14 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> findBySubjectSubjectName(String subjectName) {
         return studentRepository.findBySubjectSubjectName(subjectName);
     }
+
+    @Override
+    public List<Student> findByEmailLike(String email) {
+        return studentRepository.findByEmailLike(email);
+    }
+
+    @Override
+    public List<Student> findByNameStartsWith(String name) {
+        return studentRepository.findByNameStartsWith(name);
+    }
 }
