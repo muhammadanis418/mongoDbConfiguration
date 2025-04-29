@@ -53,14 +53,14 @@ public class StudentController {
         return studentService.findByNameOrEmail(name, email);
     }
 
-    @GetMapping("by-department")
-    public List<Student>getStudentsByDepartment(@RequestParam String deptName) {
-        return studentService.findBYDepartmentByDepartmentName(deptName);
+    @GetMapping("by-departmentId")
+    public List<Student>getStudentsByDepartment(@RequestParam String depId) {
+        return studentService.findByDepartment_Id(depId);
     }
 
-    @GetMapping("by-subject")
-    public List<Student> findBySubjectSubjectName(@RequestParam String subjectName){
-        return studentService.findBySubjectSubjectName(subjectName);
+    @GetMapping("by-subjectId")
+    public List<Student> findBySubjectSubjectName(@RequestParam String subId){
+        return studentService.findBySubject_Id(subId);
 
     }
 
