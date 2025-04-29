@@ -2,6 +2,7 @@ package com.example.mongodbconfigurationwithspringboot.repository;
 
 import com.example.mongodbconfigurationwithspringboot.entity.Student;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface StudentRepository extends MongoRepository<Student, String> {
 
     List<Student> findByName(String name);
 
-    Student findByNameAndEmail(String name, String email);
+  //  Student findByNameAndEmail(String name, String email);
 
     Student findByNameOrEmail(String name, String email);
     /*
@@ -27,5 +28,8 @@ public interface StudentRepository extends MongoRepository<Student, String> {
     List<Student>findByEmailLike(String email);
 
     List<Student> findByNameStartsWith(String name);
+
+    @Query("{ \"name\" :  \"?0\",\"email\" : \"?1\"}")
+    Student getByNameAndEmail(String name, String email);
 
 }
