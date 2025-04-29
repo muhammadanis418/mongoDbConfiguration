@@ -6,15 +6,30 @@ import java.util.List;
 
 public interface StudentService {
     Student save(Student student);
+
     Student findById(String id);
+
     List<Student> findAll(int pageNo, int pageSize);
+
     Student update(Student student);
+
     String delete(String id);
-    List<Student>findByName(String name);
+
+    List<Student> findByName(String name);
+
     Student findByNameAndEmail(String name, String email);
+
     Student findByNameOrEmail(String name, String email);
 
-    List<Student> findBYDepartmentByDepartmentName(String departmentName);
+    //    List<Student> findBYDepartmentByDepartmentName(String departmentName);
+//    List<Student> findBySubjectSubjectName(String subjectName);
+    List<Student> findByEmailLike(String email);
 
-    List<Student> findBySubjectSubjectName(String subjectName);
+    List<Student> findByNameStartsWith(String name);
+
+    List<Student> findByDepartment_Id(String depId);
+
+    List<Student> findBySubject_Id(String subId);
+
+
 }
