@@ -50,6 +50,14 @@ After adding dependencies you can use these annotation to lpersist the model int
  > **Note**: Fields with the `@EnableMongoRepositories` place packages name of repositories. Use this annotation on main class & also provide package name.
 
 
+### Relationship in MOngoDB
+
+`@DBRef` annotation is used when we have relationship between different collection.
+  - For Embedded we don't use this annotation.
+  - `@DBRef (lazy= false)` Relationship document can return the data.
+  - `@DBRef (lazy= true)` Relationship document can return null.
+
+
 
 
 
