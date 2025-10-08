@@ -73,7 +73,7 @@ public class StudentController {
     }
 
     @GetMapping("by-name")
-    public List<Student> findByNameStartsWith(RequestParam String name) {
+    public List<Student> findByNameStartsWith(@RequestParam String name) {
         return studentService.findByNameStartsWith(name);
     }
 
